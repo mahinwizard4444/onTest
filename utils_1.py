@@ -107,7 +107,7 @@ async def get_search_results(query, file_type=None, max_results=10, offset=0):
     if next_offset > total_results:
         next_offset = ''
 
-    cursor = Media.find(filter)
+   
     # Sort by recent
     cursor.sort('$natural', -1)
     # Slice files according to offset and max results
@@ -119,7 +119,6 @@ async def get_search_results(query, file_type=None, max_results=10, offset=0):
 
 async def get_file_details(query):
     filter = {'file_id': query}
-    cursor = Media.find(filter)
     filedetails = await cursor.to_list(length=1)
     return filedetails
 
@@ -136,8 +135,7 @@ async def get_filter_results(query):
         regex = re.compile(raw_pattern, flags=re.IGNORECASE)
     except:
         return []
-    filter = {'file_name': regex}
-    cursor = Media.find(filter)
+    filter = {'file_name': regex}   
     cursor.sort('$natural', -1)
     files = await cursor.to_list(length=int(total_results))
     return files
