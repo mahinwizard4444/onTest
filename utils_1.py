@@ -15,14 +15,6 @@ import json
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
-client = AsyncIOMotorClient(DATABASE_URI)
-db = client[DATABASE_NAME]
-instance = Instance.from_db(db)
-
-IClient = AsyncIOMotorClient(DATABASE_URI_2)
-imdbdb=client[DATABASE_NAME_2]
-imdb=Instance.from_db(imdbdb)
-
 @instance.register
 class Media(Document):
     file_id = fields.StrField(attribute='_id')
