@@ -131,17 +131,11 @@ async def get_filter_results(query):
     except:
         return []
     filter = {'file_name': regex}
-    total_results = await Media.count_documents(filter)
     cursor = Media.find(filter)
     cursor.sort('$natural', -1)
     files = await cursor.to_list(length=int(total_results))
     return files
 
-async def get_file_details(query):
-    filter = {'file_id': query}
-    cursor = Media.find(filter)
-    filedetails = await cursor.to_list(length=1)
-    return filedetails
 
 
 async def is_subscribed(bot, query):
