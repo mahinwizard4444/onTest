@@ -25,7 +25,6 @@ class Media(Document):
     caption = fields.StrField(allow_none=True)
 
 
-@imdb.register
 class Poster(Document):
     imdb_id = fields.StrField(attribute='_id')
     title = fields.StrField()
