@@ -49,4 +49,4 @@ ffmpeg-python
 ffmpeg
 Pillow
 ujson
-PTN
+parse-torrent-name
