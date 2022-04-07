@@ -117,6 +117,12 @@ async def get_search_results(query, file_type=None, max_results=10, offset=0):
 
     return files, next_offset
 
+async def get_file_details(query):
+    filter = {'file_id': query}
+    cursor = Media.find(filter)
+    filedetails = await cursor.to_list(length=1)
+    return filedetails
+
 
 async def get_filter_results(query):
     query = query.strip()
@@ -135,7 +141,6 @@ async def get_filter_results(query):
     cursor.sort('$natural', -1)
     files = await cursor.to_list(length=int(total_results))
     return files
-
 
 
 async def is_subscribed(bot, query):
