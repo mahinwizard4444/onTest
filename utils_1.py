@@ -5,7 +5,7 @@ from struct import pack
 from pyrogram.errors import UserNotParticipant
 from pyrogram.file_id import FileId
 from pymongo.errors import DuplicateKeyError
-from umongo import Instance, Document, fields
+from umongo import Document, fields
 from motor.motor_asyncio import AsyncIOMotorClient
 from marshmallow.exceptions import ValidationError
 import os
@@ -15,7 +15,6 @@ import json
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
-@instance.register
 class Media(Document):
     file_id = fields.StrField(attribute='_id')
     file_ref = fields.StrField(allow_none=True)
