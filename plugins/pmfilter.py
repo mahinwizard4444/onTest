@@ -1,3 +1,4 @@
+from info import AUTH_USERS, AUTH_CHANNEL
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters
 import re
