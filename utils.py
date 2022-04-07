@@ -67,7 +67,6 @@ async def is_subscribed(bot, query):
 
     return False
 
-@instance.register
 class Media(Document):
     file_id = fields.StrField(attribute='_id')
     file_ref = fields.StrField(allow_none=True)
