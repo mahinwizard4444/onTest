@@ -109,17 +109,13 @@ async def get_search_results(query, file_type=None, max_results=10, offset=0):
 
    
     # Sort by recent
-    cursor.sort('$natural', -1)
     # Slice files according to offset and max results
-    cursor.skip(offset).limit(max_results)
+    
     # Get list of files
-    files = await cursor.to_list(length=max_results)
-
     return files, next_offset
 
 async def get_file_details(query):
     filter = {'file_id': query}
-    filedetails = await cursor.to_list(length=1)
     return filedetails
 
 
@@ -136,7 +132,6 @@ async def get_filter_results(query):
     except:
         return []
     filter = {'file_name': regex}   
-    files = await cursor.to_list(length=int(total_results))
     return files
 
 
@@ -168,8 +163,6 @@ async def get_poster(movie):
         filter = {'$and': [{'title': str(title).lower().strip()}, {'year': int(year)}]}
     else:
         filter = {'title': str(title).lower().strip()}
-    cursor = Poster.find(filter)
-    is_in_db = await cursor.to_list(length=1)
     poster=None
     if is_in_db:
         for nyav in is_in_db:
