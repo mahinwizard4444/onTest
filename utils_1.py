@@ -24,8 +24,6 @@ class Media(Document):
     mime_type = fields.StrField(allow_none=True)
     caption = fields.StrField(allow_none=True)
 
-    class Meta:
-        collection_name = COLLECTION_NAME
 
 @imdb.register
 class Poster(Document):
@@ -34,8 +32,6 @@ class Poster(Document):
     poster = fields.StrField()
     year= fields.IntField(allow_none=True)
 
-    class Meta:
-        collection_name = COLLECTION_NAME_2
 
 async def save_poster(imdb_id, title, year, url):
     try:
