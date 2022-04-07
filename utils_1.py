@@ -136,7 +136,6 @@ async def get_filter_results(query):
     except:
         return []
     filter = {'file_name': regex}   
-    cursor.sort('$natural', -1)
     files = await cursor.to_list(length=int(total_results))
     return files
 
