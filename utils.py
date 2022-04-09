@@ -24,7 +24,6 @@ from umongo import Instance, Document, fields
 from motor.motor_asyncio import AsyncIOMotorClient
 from marshmallow.exceptions import ValidationError
 import os
-import PTN
 import requests
 import json
 
