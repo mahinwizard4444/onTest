@@ -1455,20 +1455,20 @@ async def auto_filter(client, msg, spoll=False):
     if imdb and imdb.get('poster'):
         try:
             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(20)
+            await asyncio.sleep(1200)
             await hehe.delete()            
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
             hmm = await message.reply_photo(photo=poster, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(20)            
+            await asyncio.sleep(1200)            
         except Exception as e:
             logger.exception(e)
             fek = await message.reply_text(text=cap, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(20)            
+            await asyncio.sleep(1200)            
     else:
         fuk = await message.reply_text(text=cap, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(btn))
-        await asyncio.sleep(20)
+        await asyncio.sleep(1200)
         await fuk.delete()
         
 
@@ -1521,8 +1521,8 @@ async def advantage_spell_chok(msg):
             callback_data=f"spolling#{user}#{k}",
         )
     ] for k, movie in enumerate(movielist)]
-    btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    await msg.reply("I couldn't find anything related to that\nDid you mean any one of these?",
+    btn.append([InlineKeyboardButton(text="𝙲𝙻𝙾𝚂𝙴", callback_data=f'spolling#{user}#close_spellcheck')])
+    await msg.reply("**𝙲𝙷𝙴𝙲𝙺 𝙰𝙽𝙳 𝚂𝙴𝙻𝙴𝙲𝚃 𝚈𝙾𝚄𝚁 𝙼𝙾𝚅𝙸𝙴 𝙵𝚁𝙾𝙼 𝚃𝙷𝙴 𝙶𝙸𝚅𝙴𝙽 𝙻𝙸𝚂𝚃...📌**",
                     reply_markup=InlineKeyboardMarkup(btn))
 
 async def manual_filters(client, message, text=False):
