@@ -36,6 +36,8 @@ PyPDF2
 pyshorteners
 ffmpeg-python
 TgCrypto
+carbonnow==0.0.1
+Pillow>=4.2.0
 py-tgcalls
 python-dotenv
 youtube_search_python
