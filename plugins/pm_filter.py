@@ -1419,6 +1419,7 @@ async def auto_filter(client, msg, spoll=False):
     TEMPLATE = settings['template']
     if imdb:
         cap = TEMPLATE.format(
+            requested = message.from_user.mention,
             query = search,
             mention = message.from_user.mention,
             title = imdb['title'],
