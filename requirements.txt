@@ -36,7 +36,6 @@ pyshorteners
 ffmpeg-python
 TgCrypto
 carbonnow==0.0.1
-Pillow>=4.2.0
 py-tgcalls
 python-dotenv
 youtube_search_python
@@ -64,6 +63,5 @@ catdoesnotexist
 python-decouple
 speedtest-cli
 countryinfo
-python-telegram-bot==11.1.0
-pyromod~=1.5
-speedtest
+libxslt
+libxml2
