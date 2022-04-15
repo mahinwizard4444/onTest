@@ -61,7 +61,7 @@ def song(client, message):
         print(str(e))
         return
     m.edit("**dσwnlσαdíng чσur ѕσng...!**")
-    await message.reply_chat_action("sending song")
+        await message.reply_chat_action("sending song")
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
