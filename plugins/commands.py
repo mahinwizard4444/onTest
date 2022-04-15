@@ -57,7 +57,7 @@ async def start(client, message):
             parse_mode='html'
         )         
         await message.reply_chat_action("typing")
-        m=await message.reply("<b>𝚂𝚄𝙱𝚂𝙲𝚁𝙸𝙱𝙴 𝙿𝙻𝙴𝙰𝚂𝙴 ›› [𝙾𝙿𝚄𝚂-𝚃𝙴𝙲𝙷𝚉](https://youtube.com/channel/UCf_dVNrilcT0V2R--HbYpMA)</b>") 
+        m=await message.reply("<b>𝙿𝙻𝙴𝙰𝚂𝙴 𝚂𝚄𝙱𝚂𝙲𝚁𝙸𝙱𝙴 ›› [𝙾𝙿𝚄𝚂-𝚃𝙴𝙲𝙷𝚉](https://youtube.com/channel/UCf_dVNrilcT0V2R--HbYpMA)</b>") 
         await asyncio.sleep(10)
         await m.delete()  
         return
@@ -98,7 +98,7 @@ async def start(client, message):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_chat_action("typing")
-        m=await message.reply("<b>𝚂𝚄𝙱𝚂𝙲𝚁𝙸𝙱𝙴 𝙿𝙻𝙴𝙰𝚂𝙴 ›› [𝙾𝙿𝚄𝚂-𝚃𝙴𝙲𝙷𝚉](https://youtube.com/channel/UCf_dVNrilcT0V2R--HbYpMA)</b>") 
+        m=await message.reply("<b>𝙿𝙻𝙴𝙰𝚂𝙴 𝚂𝚄𝙱𝚂𝙲𝚁𝙸𝙱𝙴 ›› [𝙾𝙿𝚄𝚂-𝚃𝙴𝙲𝙷𝚉](https://youtube.com/channel/UCf_dVNrilcT0V2R--HbYpMA)</b>") 
         await asyncio.sleep(10)
         await m.delete()
         await message.reply_photo(
