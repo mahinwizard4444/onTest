@@ -50,7 +50,7 @@ async def start(client, message):
             InlineKeyboardButton('✅ SUBSCᏒIBΞ  ✅', url='https://youtube.com/channel/UCf_dVNrilcT0V2R--HbYpMA')
         ]]  
         await message.reply_chat_action("typing")
-        m=await message.reply_caption("Hi") 
+        m=await message.reply("Hi") 
         await asyncio.sleep(4)
         await m.delete()       
         reply_markup = InlineKeyboardMarkup(buttons)        
