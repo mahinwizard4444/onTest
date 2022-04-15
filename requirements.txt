@@ -49,5 +49,3 @@ ffmpeg-python
 ffmpeg
 Pillow
 ujson
-carbonnow
-speedtest-cli
