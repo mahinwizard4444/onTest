@@ -63,5 +63,3 @@ catdoesnotexist
 python-decouple
 speedtest-cli
 countryinfo
-libxslt
-libxml2
