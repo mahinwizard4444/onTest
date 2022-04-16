@@ -1425,6 +1425,7 @@ async def auto_filter(client, msg, spoll=False):
         cap = TEMPLATE.format(            
             query = search,            
             title = imdb['title'],
+            requested = message.from_user.mention,
             votes = imdb['votes'],
             aka = imdb["aka"],
             seasons = imdb["seasons"],
