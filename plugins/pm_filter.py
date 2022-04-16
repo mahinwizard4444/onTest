@@ -205,6 +205,9 @@ async def next_page(bot, query):
              InlineKeyboardButton(f"𝙿𝙰𝙶𝙴 {round(int(offset) / 10) + 1} / {round(total / 10)}",
                                   callback_data="pages")]
         )
+        btn.insert(0,
+            [InlineKeyboardButton(text="✅ 𝚂𝚄𝙱𝚂𝙲𝚁𝙸𝙱𝙴 ✅",url="https://youtube.com/channel/UCf_dVNrilcT0V2R--HbYpMA")]             
+        )
     elif off_set is None:
         btn.append(
             [InlineKeyboardButton(f"𝙿𝙰𝙶𝙴 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
@@ -216,6 +219,9 @@ async def next_page(bot, query):
                 InlineKeyboardButton(f"𝙿𝙰𝙶𝙴 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
                 InlineKeyboardButton("𝙽𝙴𝚇𝚃 ››", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
+        )
+        btn.insert(0,
+            [InlineKeyboardButton(text="✅ 𝚂𝚄𝙱𝚂𝙲𝚁𝙸𝙱𝙴 ✅",url="https://youtube.com/channel/UCf_dVNrilcT0V2R--HbYpMA")]             
         )
     try:
         await query.edit_message_reply_markup(
