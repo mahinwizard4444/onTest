@@ -6,7 +6,7 @@ COPY requirements.txt /requirements.txt
 
 RUN cd /
 RUN pip3 install -U pip && pip3 install -U -r requirements.txt
-RUN mkdir /Ajax-pro-V4
-WORKDIR /Ajax-pro-V4
+RUN mkdir /V4
+WORKDIR /V4
 COPY start.sh /start.sh
 CMD ["/bin/bash", "/start.sh"]
