@@ -98,7 +98,7 @@ async def fil_mod(client, message):
       else:
           await m.edit("𝚄𝚂𝙴 :- /autofilter on 𝙾𝚁 /autofilter off")
 
-@Client.on_message(filters.text & filters.incoming)
+@Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client,message):
     group_id = message.chat.id
     name = message.text
@@ -1424,11 +1424,8 @@ async def auto_filter(client, msg, spoll=False):
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
     if imdb:
-        cap = TEMPLATE.format(
-            requested = message.from_user.mention,
-            group = message.chat.title,
-            query = search,
-            mention = message.from_user.mention,
+        cap = TEMPLATE.format(            
+            query = search,            
             title = imdb['title'],
             votes = imdb['votes'],
             aka = imdb["aka"],
