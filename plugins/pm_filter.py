@@ -1561,14 +1561,14 @@ async def manual_filters(client, message, text=False):
                                 reply_text,
                                 disable_web_page_preview=True,
                                 reply_markup=InlineKeyboardMarkup(button),
-                                reply_to_message=reply_id
+                                reply_to_message_id=reply_id
                             )
                     elif btn == "[]":
                         await client.send_cached_media(
                             group_id,
                             fileid,
                             caption=reply_text or "",
-                            reply_to_message=reply_id
+                            reply_to_message_id=reply_id
                         )
                     else:
                         button = eval(btn)
@@ -1576,7 +1576,7 @@ async def manual_filters(client, message, text=False):
                             fileid,
                             caption=reply_text or "",
                             reply_markup=InlineKeyboardMarkup(button),
-                            reply_to_message=reply_id
+                            reply_to_message_id=reply_id
                         )
                 except Exception as e:
                     logger.exception(e)
