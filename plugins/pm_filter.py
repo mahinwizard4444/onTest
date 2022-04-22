@@ -1474,7 +1474,7 @@ async def auto_filter(client, msg, spoll=False):
         fuk = await message.reply_text(text=cap, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(12)
     if spoll:
-        await fuk.delete()
+        await msg.message.delete()
 
 async def advantage_spell_chok(msg):
     query = re.sub(
