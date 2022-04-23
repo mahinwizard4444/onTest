@@ -107,6 +107,16 @@
             "description": "Customize Result Buttons to Callback or Url by (True = url / False = callback)",
             "value": "True",
             "required": false
+        },
+        "UNAUTHORIZED_CALLBACK_TEXT":{
+            "description": "Text to show when unauthorized user tries to use bot. Defaults to 'oKda' (200 Char Limit).",
+            "value": "oKda",
+            "required": false
+        },
+        "REDIRECT_TO":{
+            "description": "Username of the channel without '@' to send files and redirect users to. Deafults to 0 (no redirect).",
+            "value": "oKda",
+            "required": false
         }
     },
     "addons": [],
