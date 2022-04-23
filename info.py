@@ -15,14 +15,7 @@ def is_enabled(value, default):
     else:
         return default
 
-class evamaria(Client):
-    filterstore: Dict[str, Dict[str, str]] = defaultdict(dict)
-    warndatastore: Dict[
-        str, Dict[str, Union[str, int, List[str]]]
-    ] = defaultdict(dict)
-    warnsettingsstore: Dict[str, str] = defaultdict(dict)
-
-    def redirected_env(value):
+def redirected_env(value):
     value = str(value)
     if value.lower() in ['chat', 'group', 'channel', 'supergroup', 'true']:
         return 'Chat'
@@ -30,6 +23,13 @@ class evamaria(Client):
         return 'PM'
     else:
         return 'Chat'
+
+class evamaria(Client):
+    filterstore: Dict[str, Dict[str, str]] = defaultdict(dict)
+    warndatastore: Dict[
+        str, Dict[str, Union[str, int, List[str]]]
+    ] = defaultdict(dict)
+    warnsettingsstore: Dict[str, str] = defaultdict(dict)
 
     def __init__(self):
         name = self.__class__.__name__.lower()
