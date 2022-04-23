@@ -22,6 +22,15 @@ class evamaria(Client):
     ] = defaultdict(dict)
     warnsettingsstore: Dict[str, str] = defaultdict(dict)
 
+    def redirected_env(value):
+    value = str(value)
+    if value.lower() in ['chat', 'group', 'channel', 'supergroup', 'true']:
+        return 'Chat'
+    elif value.lower() in ['user', '0', 'pm', 'personal', 'bot', 'bot pm', 'false']:
+        return 'PM'
+    else:
+        return 'Chat'
+
     def __init__(self):
         name = self.__class__.__name__.lower()
         super().__init__(
