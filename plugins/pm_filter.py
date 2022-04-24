@@ -461,10 +461,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f_caption = CUSTOM_FILE_CAPTION.format(file_name='' if title is None else title,
                                                        file_size='' if size is None else size,
                                                        file_caption='' if f_caption is None else f_caption)
-
-                buttons = [[
-                  InlineKeyboardButton('🔰 Main Group 🔰', url='https://t.me/KC_Films')
-                  ]]                                        
+                                                       
             except Exception as e:
                 logger.exception(e)
             f_caption = f_caption
@@ -490,25 +487,24 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     protect_content=True if ident == "filep" else False 
                 )
                 msg1 = await query.message.reply(
-                f'<b>Hey 👋{query.from_user.mention}\n'
-                f'<b>📫 Yᴏuʀ Fɪʟᴇ ɪꜱ Rᴇᴀᴅʏ 👇\n\n'
-                f'<b>↬ ғɪʟᴇ ɴᴀᴍᴇ: </b><code>{title}</code>\n'
-                f'<b>↬ sɪᴢᴇ:</b> {size}\n\n'
-                '<code>𝘛𝘩𝘪𝘴 𝘍𝘪𝘭𝘦 𝘸𝘪𝘭𝘭 𝘣𝘦 𝘋𝘦𝘭𝘦𝘵𝘦𝘥 𝘪𝘯 5 𝘔𝘪𝘯𝘶𝘵𝘦𝘴.!</code>',
+                f'<b>Hey {query.from_user.mention}\n'
+                f'<b><i>Your File Is Ready ✨</i></b>\n\n'
+                f'<b><i>{title} ›› {size}</i></b>\n\n'
+                '<b><i>Click The Below Button For File.. File Will Auto-Delete Within Next 5 Minutes.. !</i></b>',
                 True,
                 'html',
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("📥 𝐂𝐥𝐢𝐜𝐤 𝐇𝐞𝐫𝐞 𝐭𝐨 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐭𝐡𝐞 𝐅𝐢𝐥𝐞 📥", url = ms.link)
+                            InlineKeyboardButton("ᴄʟɪᴄᴋ ʜᴇʀᴇ ғᴏʀ ғɪʟᴇ", url = ms.link)
                         ],
                         [
-                            InlineKeyboardButton("⚠️ 𝐂𝐚𝐧'𝐭 𝐕𝐢𝐞𝐰 𝐓𝐡𝐞 𝐅𝐢𝐥𝐞 ❓ 𝐂𝐥𝐢𝐜𝐤 𝐇𝐞𝐫𝐞 ⚠️", url = f"{CH_LINK}")
+                            InlineKeyboardButton("ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴊᴏɪɴ ғɪʟᴇs ᴄʜᴀɴɴᴇʟ", url = f"{CH_LINK}")
                         ]
                     ]
                 )
             )
-            await asyncio.sleep(10)
+            await asyncio.sleep(300)
             await msg1.delete()            
             await ms.delete()
             del msg1, ms
@@ -532,9 +528,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f_caption = CUSTOM_FILE_CAPTION.format(file_name='' if title is None else title,
                                                        file_size='' if size is None else size,
                                                        file_caption='' if f_caption is None else f_caption)
-                buttons = [[
-                  InlineKeyboardButton('🔰 Main Group 🔰', url='https://t.me/KC_Films')
-                  ]]
             except Exception as e:
                 logger.exception(e)
                 f_caption = f_caption
