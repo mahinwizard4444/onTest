@@ -511,11 +511,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await asyncio.sleep(10)
             await msg1.delete()            
             await ms.delete()
-            await msg.delete()
-            del msg1, ms, msg
+            del msg1, ms
         except Exception as e:
             logger.exception(e, exc_info=True)
-            await query.answer(f"Encountering Issues", True)
 
     elif query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
