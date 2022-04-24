@@ -492,6 +492,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 '<i>Click The Below Button For File.. File Will Auto-Delete Within Next 5 Minutes.. !</i>',
                 True,
                 'html',
+                disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
