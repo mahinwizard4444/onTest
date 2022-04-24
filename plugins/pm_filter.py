@@ -508,12 +508,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     ]
                 )
             )
-            await query.answer('Check Out The Chat',show_alert=True)
             await asyncio.sleep(10)
-            await msg1.delete()
-            await msg.delete()
+            await msg1.delete()            
             await ms.delete()
-            del msg1, msg, ms
+            await msg.delete()
+            del msg1, ms, msg
         except Exception as e:
             logger.exception(e, exc_info=True)
             await query.answer(f"Encountering Issues", True)
