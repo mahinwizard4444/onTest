@@ -512,7 +512,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await asyncio.sleep(300)
             await msg1.delete()
             await msg.delete()
-            del msg1, msg
         except Exception as e:
             logger.exception(e, exc_info=True)
             await query.answer(f"Encountering Issues", True)
