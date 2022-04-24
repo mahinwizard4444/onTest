@@ -77,12 +77,9 @@ async def start(client, message):
             try:
             	kk, file_id = message.command[1].split("_", 1)
             	pre = 'checksubp' if kk == 'filep' else 'checksub' 
-            	btn.append([InlineKeyboardButton(" 🔁 𝐓𝐫𝐲 𝐀𝐠𝐚𝐢𝐧 🔁", callback_data=f"{pre}#{file_id}")])
-            except IndexError:
-                btn.append([InlineKeyboardButton(" 🔁 𝐓𝐫𝐲 𝐀𝐠𝐚𝐢𝐧 🔁", url=f"https://t.me/{temp.U_NAME}/{message.command[1]}")])
         await client.send_message(
             chat_id=message.from_user.id,
-            text="**𝑱𝒐𝒊𝒏 𝑶𝒖𝒓 𝑴𝒐𝒗𝒊𝒆 𝑼𝒑𝒅𝒂𝒕𝒆𝒔 𝑪𝒉𝒂𝒏𝒏𝒆𝒍 𝑻𝒐 𝑼𝒔𝒆 𝑻𝒉𝒊𝒔 𝑩𝒐𝒕!**",
+            text="**𝑱𝒐𝒊𝒏 𝒐𝒖𝒓 𝒎𝒐𝒗𝒊𝒆 𝒖𝒑𝒅𝒂𝒕𝒆𝒔 𝒄𝒉𝒂𝒏𝒏𝒆𝒍 𝒂𝒏𝒅 𝒄𝒍𝒊𝒄𝒌 𝒕𝒉𝒆 𝒍𝒊𝒏𝒌 𝒂𝒈𝒂𝒊𝒏 𝒇𝒐𝒓 𝒇𝒊𝒍𝒆𝒔..!**",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode="markdown"
             )
