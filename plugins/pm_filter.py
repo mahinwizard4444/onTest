@@ -483,7 +483,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ms = await client.send_cached_media(
                     chat_id=CH_FILTER,
                     file_id=file_id,
-                    caption=f''<i><b>📟 Name : {title}</b>\n<b>🎗 Size : {size}</b></i>\n\n<i>𝘛𝘩𝘪𝘴 File W𝘪𝘭𝘭 B𝘦 𝘈𝘶𝘵𝘰-D𝘦𝘭𝘦𝘵𝘦𝘥 In Next 5 𝘔𝘪𝘯𝘶𝘵𝘦𝘴 T𝘰 𝘈𝘷𝘰𝘪𝘥 𝘊𝘰𝘱𝘺𝘳𝘪𝘨𝘩𝘵 𝘐𝘴𝘴𝘶𝘦𝘴.So Forward This File To Anywhere Else Before Downloading..</i>\n\n<b><i>🧑🏻‍💻 Requested By : {query.from_user.mention}</b>\n🚀 Group : <b>{query.message.chat.title}</i></b>',
+                    caption=f'<i><b>📟 Name : {title}</b>\n<b>🎗 Size : {size}</b></i>\n\n<i>𝘛𝘩𝘪𝘴 File W𝘪𝘭𝘭 B𝘦 𝘈𝘶𝘵𝘰-D𝘦𝘭𝘦𝘵𝘦𝘥 In Next 5 𝘔𝘪𝘯𝘶𝘵𝘦𝘴 T𝘰 𝘈𝘷𝘰𝘪𝘥 𝘊𝘰𝘱𝘺𝘳𝘪𝘨𝘩𝘵 𝘐𝘴𝘴𝘶𝘦𝘴.So Forward This File To Anywhere Else Before Downloading..</i>\n\n<b><i>🧑🏻‍💻 Requested By : {query.from_user.mention}</b>\n🚀 Group : <b>{query.message.chat.title}</i></b>',
                     protect_content=True if ident == "filep" else False 
                 )
                 msg1 = await query.message.reply(
