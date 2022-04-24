@@ -490,7 +490,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f'<b><i>{query.from_user.mention} Your File Is Ready ✨</i></b>\n\n'
                 f'<b><i>📟 Name : <a href=https://t.me/MWUpdatez>{title}</a></i></b>\n\n'
                 f'<b><i>🎗 Size : {size}</b></i>\n\n'
-                f'<a href=https://t.me/AjaxFiles?start={ident}_{file_id}>Forward</a>'
                 '<i>⚡️Click The Below Button For Files.⚡️</i>',
                 True,
                 'html',
