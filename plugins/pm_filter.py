@@ -488,7 +488,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 )
                 msg1 = await query.message.reply(
                 f'<b><i>{query.from_user.mention} Your File Is Ready ✨</i></b>\n\n'
-                f'<b><i>📟 Name : [{title} ›› {size}](https://t.me/MWUpdatez)</i></b>\n\n'
+                f'<b><i>📟 Name : <a href=https://t.me/MWUpdatez>{title} ›› {size}</a></i></b>\n\n'
                 '<i>Click The Below Button For File.. File Will Auto-Delete Within Next 5 Minutes.. !</i>',
                 True,
                 'html',
