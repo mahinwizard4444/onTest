@@ -72,17 +72,7 @@ async def start(client, message):
                 )
             ]
         ]
-
-        if message.command[1] != "subscribe":
-            try:
-            	kk, file_id = message.command[1].split("_", 1)
-            	pre = 'checksubp' if kk == 'filep' else 'checksub' 
-        await client.send_message(
-            chat_id=message.from_user.id,
-            text="**𝑱𝒐𝒊𝒏 𝒐𝒖𝒓 𝒎𝒐𝒗𝒊𝒆 𝒖𝒑𝒅𝒂𝒕𝒆𝒔 𝒄𝒉𝒂𝒏𝒏𝒆𝒍 𝒂𝒏𝒅 𝒄𝒍𝒊𝒄𝒌 𝒕𝒉𝒆 𝒍𝒊𝒏𝒌 𝒂𝒈𝒂𝒊𝒏 𝒇𝒐𝒓 𝒇𝒊𝒍𝒆𝒔..!**",
-            reply_markup=InlineKeyboardMarkup(btn),
-            parse_mode="markdown"
-            )
+         
         return
     if len(message.command) ==2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
