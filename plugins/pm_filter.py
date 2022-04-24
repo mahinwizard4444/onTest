@@ -490,6 +490,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f'<b><i>{query.from_user.mention} Your File Is Ready ✨</i></b>\n\n'
                 f'<b><i>📟 Name : <a href=https://t.me/MWUpdatez>{title}</a></i></b>\n\n'
                 f'<b><i>🎗 Size : {size}</b></i>',
+                f'<i>⚡️Click The Below Button For Files.⚡️</i>',
                 True,
                 'html',
                 disable_web_page_preview=True,
