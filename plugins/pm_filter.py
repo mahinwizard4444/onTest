@@ -489,7 +489,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 msg1 = await query.message.reply(
                 f'<b><i>{query.from_user.mention} Your File Is Ready ✨</i></b>\n\n'
                 f'<b><i>📟 Name : <a href=https://t.me/MWUpdatez>{title}</a></i></b>\n\n'
-                f'<b><i>🎗 Size : {size}</b></i>',
+                f'<b><i>🎗 Size : {size}</b></i>\n\n',
                 f'<i>⚡️Click The Below Button For Files.⚡️</i>',
                 True,
                 'html',
