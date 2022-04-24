@@ -487,10 +487,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     protect_content=True if ident == "filep" else False 
                 )
                 msg1 = await query.message.reply(
-                f'<b>Hey {query.from_user.mention}\n'
-                f'<b><i>Your File Is Ready ✨</i></b>\n\n'
-                f'<b><i>{title} ›› {size}</i></b>\n\n'
-                '<b><i>Click The Below Button For File.. File Will Auto-Delete Within Next 5 Minutes.. !</i></b>',
+                f'<b><i>{query.from_user.mention} Your File Is Ready ✨</i></b>\n\n'
+                f'<b><i>📟 Name : {title} ›› {size}</i></b>\n\n'
+                '<i>Click The Below Button For File.. File Will Auto-Delete Within Next 5 Minutes.. !</i>',
                 True,
                 'html',
                 reply_markup=InlineKeyboardMarkup(
