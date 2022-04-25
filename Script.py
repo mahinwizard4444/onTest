@@ -1,6 +1,6 @@
 class script(object):
-    START_TXT = """<b>ʜᴇʟʟᴏ {},
-ᴍʏ ɴᴀᴍᴇ ɪs <a href=https://t.me/NEOAutofilterBot><b>N E ∅</b></a>ʏᴏᴜ ᴄᴀɴᴛ ᴜsᴇ ᴍᴇ ᴀɴʏᴡʜᴇʀᴇ ᴊᴏɪɴ ᴍʏ ɢʀᴏᴜᴘ </a> <a href=https://t.me/DMoviesLand><b>ᴅ-ᴍᴏᴠɪᴇs ʟᴀɴᴅ</b></a> ᴛᴏ ᴜsᴇ ᴍᴇ.</b>"""
+    START_TXT = """<b>𝙷𝙴𝙻𝙻𝙾 {},
+𝙼𝚈 𝙽𝙰𝙼𝙴 𝙸𝚂 <a href=https://t.me/NEOAutofilterBot><b>𝙽𝙴𝙾</b></a> 𝚈𝙾𝚄 𝙲𝙰𝙽𝚃 𝚄𝚂𝙴 𝙾𝙽𝙻𝚈 𝙾𝙽 𝙼𝚈 𝙶𝚁𝙾𝚄𝙿 </a> <a href=https://t.me/DMoviesLand><b>𝙳-𝙼𝙾𝚅𝙸𝙴𝚂 𝙻𝙰𝙽𝙳</b></a> 𝙹𝙾𝙸𝙽 𝚃𝙾 𝚄𝚂𝙴 𝙼𝙴.</b>"""
     STATUS_TXT = """<b>᚛› 𝚃𝙾𝚃𝙰𝙻 𝙵𝙸𝙻𝙴𝚂: <code>{}</code></b>
 <b>᚛› 𝚃𝙾𝚃𝙰𝙻 𝚄𝚂𝙴𝚁𝚂: <code>{}</code></b>
 <b>᚛› 𝚃𝙾𝚃𝙰𝙻 𝙲𝙷𝙰𝚃𝚂: <code>{}</code></b>
