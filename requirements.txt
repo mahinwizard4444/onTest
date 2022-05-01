@@ -48,3 +48,4 @@ ffmpeg-python
 ffmpeg
 Pillow
 ujson
+prettyconf
