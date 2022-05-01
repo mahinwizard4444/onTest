@@ -69,3 +69,8 @@ PyLyrics
 zalgo_text
 pynewtonmath
 bs4
+mapping
+spamwatch>=0.3.0
+datetime
+dnspython
+python-decouple
