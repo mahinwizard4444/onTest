@@ -64,7 +64,7 @@ feedparser
 pyowm
 bs4
 lxml
-demjson
+PyLyrics
 #telegram
 zalgo_text
 pynewtonmath
