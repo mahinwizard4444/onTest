@@ -69,3 +69,4 @@ PyLyrics
 zalgo_text
 pynewtonmath
 bs4
+demjson-2.2.4
