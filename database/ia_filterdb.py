@@ -26,8 +26,10 @@ class Media(Document):
     file_type = fields.StrField(allow_none=True)
     mime_type = fields.StrField(allow_none=True)
     caption = fields.StrField(allow_none=True)
+    link = fields.StrField(allow_none=True)
 
     class Meta:
+        indexes = ('$file_name', )
         collection_name = COLLECTION_NAME
 
 
@@ -46,6 +48,7 @@ async def save_file(media):
             file_type=media.file_type,
             mime_type=media.mime_type,
             caption=media.caption.html if media.caption else None,
+            link=media.link,
         )
     except ValidationError:
         logger.exception('Error occurred while saving file in database')
@@ -54,10 +57,13 @@ async def save_file(media):
         try:
             await file.commit()
         except DuplicateKeyError:      
-            logger.warning(media.file_name + " is already saved in database")
+            logger.warning(
+                f'{getattr(media, "file_name", "NO_FILE")} is already saved in database'
+            )
+
             return False, 0
         else:
-            logger.info(media.file_name + " is saved in database")
+            logger.info(f'{getattr(media, "file_name", "NO_FILE")} is saved to database')
             return True, 1
 
 
