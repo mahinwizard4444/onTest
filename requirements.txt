@@ -31,7 +31,7 @@ wheel
 humanize
 ytthumb
 requests
-parse-torrent-name
+PTN
 pypdf2
 PyPDF2
 pyshorteners
