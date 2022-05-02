@@ -30,6 +30,8 @@ psutil
 wheel
 humanize
 ytthumb
+requests
+parse-torrent-name
 pypdf2
 PyPDF2
 pyshorteners
