@@ -16,7 +16,7 @@ async def index_files(bot, query, message):
         await message.reply('Wait until previous process complete.')
     else:
         while True:
-            last_msg = await query.msg.reply(text = "Forward me last message of a channel which I should save to my database.\n\nYou can forward posts from any public channel, but for private channels bot should be an admin in the channel.\n\nMake sure to forward with quotes (Not as a copy)", chat_id = message.from_user.id)
+            last_msg = await query.message.reply(text = "Forward me last message of a channel which I should save to my database.\n\nYou can forward posts from any public channel, but for private channels bot should be an admin in the channel.\n\nMake sure to forward with quotes (Not as a copy)", chat_id = message.from_user.id)
             try:
                 last_msg_id = last_msg.forward_from_message_id
                 if last_msg.forward_from_chat.username:
