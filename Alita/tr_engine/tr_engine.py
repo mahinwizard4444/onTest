@@ -33,8 +33,7 @@ lang_dict = cache_localizations(lang_files)
 
 def tlang(m, user_msg):
     """Main function for getting the string of preferred language."""
-    with LANG_LOCK:
-        default_lang = "en"
+    with LANG_LOCK:        
 
         m_args = user_msg.split(".")  # Split in a list
 
@@ -53,7 +52,7 @@ def tlang(m, user_msg):
         # Raise exception if lang_code not found
         if lang not in ENABLED_LOCALES:
             LOGGER.error("Non-enabled locale used by user!")
-            lang = default_lang
+            
 
         # Get lang
         m_args.insert(0, lang)
