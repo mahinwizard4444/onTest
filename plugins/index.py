@@ -7,7 +7,7 @@ import os
 from utils_1 import save_file
 logger = logging.getLogger(__name__)
 lock = asyncio.Lock()
-from pyrogram.types import Message, message
+from pyrogram.types import Message
 
 @Client.on_message(filters.command(['index', 'indexfiles']) & filters.user(ADMINS))
 async def index_files(bot, message):
