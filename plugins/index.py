@@ -143,7 +143,6 @@ async def index_files_to_db(lst_msg_id, chat, msg, bot):
         try:
             total = lst_msg_id + 1
             current = temp.CURRENT
-            nyav=0
             temp.CANCEL = False
             while current < total:
                 if temp.CANCEL:
@@ -159,8 +158,7 @@ async def index_files_to_db(lst_msg_id, chat, msg, bot):
                         replies=0
                     )
                 except Exception as e:
-                        print(e)
-                        pass
+                    logger.exception(e)
                 try:
                     for file_type in ("document", "video", "audio"):
                         media = getattr(message, file_type, None)
@@ -170,22 +168,31 @@ async def index_files_to_db(lst_msg_id, chat, msg, bot):
                             continue
                     media.file_type = file_type
                     media.caption = message.caption
-                    await save_file(media)
-                    total_files += 1
+                    aynav, vnay = await save_file(media)
+                    if aynav:
+                        total_files += 1
+                    elif vnay == 0:
+                        duplicate += 1
+                    elif vnay == 2:
+                        errors += 1
                 except Exception as e:
-                    print(e)
-                    pass
-                current+=1
-                nyav+=1
-                if nyav == 20:
-                    await msg.edit(f"Total messages fetched: {current}\nTotal messages saved: {total_files}")
-                    nyav -= 20
-                if current == total:
-                    break
-                else:
-                    continue
+                    if "NoneType" in str(e):
+                        if message.empty:
+                            deleted += 1
+                        elif not media:
+                            no_media += 1
+                        logger.warning("Skipping deleted / Non-Media messages (if this continues for long, use /setskip to set a skip number)")     
+                    else:
+                        logger.exception(e)
+                current += 1
+                if current % 20 == 0:
+                    can = [[InlineKeyboardButton('Cancel', callback_data='index_cancel')]]
+                    reply = InlineKeyboardMarkup(can)
+                    await msg.edit_text(
+                        text=f"Total messages fetched: <code>{current}</code>\nTotal messages saved: <code>{total_files}</code>\nDuplicate Files Skipped: <code>{duplicate}</code>\nDeleted Messages Skipped: <code>{deleted}</code>\nNon-Media messages skipped: <code>{no_media}</code>\nErrors Occured: <code>{errors}</code>",
+                        reply_markup=reply)
         except Exception as e:
             logger.exception(e)
             await msg.edit(f'Error: {e}')
         else:
-            await msg.edit(f'Total {total_files} Saved To DataBase!')
+            await msg.edit(f'Succesfully saved <code>{total_files}</code> to dataBase!\nDuplicate Files Skipped: <code>{duplicate}</code>\nDeleted Messages Skipped: <code>{deleted}</code>\nNon-Media messages skipped: <code>{no_media}</code>\nErrors Occured: <code>{errors}</code>')
