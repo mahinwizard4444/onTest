@@ -7,10 +7,10 @@ import os
 from utils_1 import save_file
 logger = logging.getLogger(__name__)
 lock = asyncio.Lock()
-
+from pyrogram.types import Message
 
 @Client.on_message(filters.command(['index', 'indexfiles']) & filters.user(ADMINS))
-async def index_files(bot, query, message):
+async def index_files(bot, message):
     """Save channel or group files"""
     if lock.locked():
         await message.reply('Wait until previous process complete.')
