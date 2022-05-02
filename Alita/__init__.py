@@ -52,8 +52,8 @@ except Exception as ef:
 LOGGER.info("------------------------")
 LOGGER.info("|         ᗩᒍᗩ᙭         |")
 LOGGER.info("------------------------")
-LOGGER.info(f"Version: {Config.VERSION}")
-LOGGER.info(f"Owner: {str(Config.OWNER_ID)}")
+LOGGER.info(f"Version: 4.13.2 [Stable]")
+LOGGER.info(f"Owner: 𝙰𝙰𝙳𝙷𝙸 | 𝙰𝚁𝙹𝚄𝙽 𝚅𝚁")
 LOGGER.info("Source Code: https://github.com/Aadhi000/Ajax\n")
 
 # Account Related
