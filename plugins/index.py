@@ -157,34 +157,34 @@ async def index_files_to_db(lst_msg_id, chat, msg, bot):
                         current,
                         replies=0
                     )
-           except Exception as e:
-                print(e)
-                pass
-            try:
-               for file_type in ("document", "video", "audio"):
-                    media = getattr(message, file_type, None)
-                    if media is not None:
+               except Exception as e:
+                        print(e)
+                        pass
+                    try:
+                        for file_type in ("document", "video", "audio"):
+                            media = getattr(message, file_type, None)
+                            if media is not None:
+                                break
+                            else:
+                                continue
+                        media.file_type = file_type
+                        media.caption = message.caption
+                        await save_file(media)
+                        total_files += 1
+                    except Exception as e:
+                        print(e)
+                        pass
+                    current+=1
+                    nyav+=1
+                    if nyav == 20:
+                        await msg.edit(f"Total messages fetched: {current}\nTotal messages saved: {total_files}")
+                        nyav -= 20
+                    if current == total:
                         break
                     else:
                         continue
-               media.file_type = file_type
-               media.caption = message.caption
-               await save_file(media)
-               total_files += 1
-           except Exception as e:
-               print(e)
-               pass
-           current+=1
-           nyav+=1
-           if nyav == 20:
-               await msg.edit(f"Total messages fetched: {current}\nTotal messages saved: {total_files}")
-               nyav -= 20
-           if current == total:
-               break
-           else:
-               continue
-   except Exception as e:
-       logger.exception(e)
-       await msg.edit(f'Error: {e}')
-   else:
-       await msg.edit(f'Total {total_files} Saved To DataBase!')      
+            except Exception as e:
+                logger.exception(e)
+                await msg.edit(f'Error: {e}')
+            else:
+                await msg.edit(f'Total {total_files} Saved To DataBase!')
