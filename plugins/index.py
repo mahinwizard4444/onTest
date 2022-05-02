@@ -143,6 +143,7 @@ async def index_files_to_db(lst_msg_id, chat, msg, bot):
         try:
             total = lst_msg_id + 1
             current = temp.CURRENT
+            nyav=0
             temp.CANCEL = False
             while current < total:
                 if temp.CANCEL:
