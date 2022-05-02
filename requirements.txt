@@ -31,7 +31,6 @@ wheel
 humanize
 ytthumb
 requests
-PTN
 pypdf2
 PyPDF2
 pyshorteners
