@@ -24,6 +24,7 @@ async def index_files(bot, query, message):
                     chat_id = last_msg.forward_from_chat.username
                 else:
                     chat_id=last_msg.forward_from_chat.id
+                    listener = client.listening.get(update.chat.id)
                 await bot.get_messages(chat_id, last_msg_id)
                 break
             except Exception as e:
