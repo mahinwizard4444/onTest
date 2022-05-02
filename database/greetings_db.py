@@ -125,7 +125,7 @@ class Greetings(MongoDB):
                 "goodbye_text": "Sad to see you leaving {first}.\nTake Care!",
                 "welcome_text": "Hey {first}, welcome to {chatname}!",
                 "welcome": True,
-                "goodbye": True,
+                "goodbye": True
             }
             self.insert_one(new_data)
             LOGGER.info(f"Initialized Greetings Document for chat {self.chat_id}")
