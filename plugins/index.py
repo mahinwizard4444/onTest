@@ -157,7 +157,7 @@ async def index_files_to_db(lst_msg_id, chat, msg, bot):
                         current,
                         replies=0
                     )
-                    except Exception as e:
+            except Exception as e:
                         print(e)
                         pass
                     try:
