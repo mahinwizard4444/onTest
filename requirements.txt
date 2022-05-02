@@ -76,3 +76,4 @@ datetime
 dnspython
 python-decouple
 asyncpg~=0.25.0
+pyromod
