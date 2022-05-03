@@ -82,8 +82,9 @@ async def start(client, message):
             caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode='html'
-        )
-        await message.reply_chat_action("starting")
+        )       
+        await message.reply_chat_action("starting")  
+        m=await message.reply("<b>𝙿𝙻𝙴𝙰𝚂𝙴 𝚂𝚄𝙱𝚂𝙲𝚁𝙸𝙱𝙴</b>")       
         return
     data = message.command[1]
     try:
