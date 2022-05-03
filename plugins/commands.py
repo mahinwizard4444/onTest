@@ -48,8 +48,7 @@ async def start(client, message):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-        await message.reply_chat_action("starting")  
-        m=await message.reply("<b>𝙿𝙻𝙴𝙰𝚂𝙴 𝚂𝚄𝙱𝚂𝙲𝚁𝙸𝙱𝙴</b>")       
+        await message.reply_chat_action("typing")                 
         return
     if AUTH_CHANNEL and not await is_subscribed(client, message):
         try:
@@ -83,8 +82,7 @@ async def start(client, message):
             reply_markup=reply_markup,
             parse_mode='html'
         )       
-        await message.reply_chat_action("starting")  
-        m=await message.reply("<b>𝙿𝙻𝙴𝙰𝚂𝙴 𝚂𝚄𝙱𝚂𝙲𝚁𝙸𝙱𝙴</b>")       
+        await message.reply_chat_action("typing")               
         return
     data = message.command[1]
     try:
