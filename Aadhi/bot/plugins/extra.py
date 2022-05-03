@@ -5,7 +5,7 @@ import shutil, psutil
 from utils_bot import *
 from Aadhi import StartTime
 
-@Client.on_message(filters.command('ping') & filters.private & ~filters.edited)
+@Client.on_message(filters.command('stats') & filters.private & ~filters.edited)
 async def stats(bot, update):
   currentTime = readable_time((time.time() - StartTime))
   total, used, free = shutil.disk_usage('.')
