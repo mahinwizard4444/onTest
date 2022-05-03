@@ -319,7 +319,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-        await message.reply_chat_action("typing")
+        await query.answer('sᴜᴘᴘᴏʀᴛ ᴘʟᴇᴀsᴇ')
     elif query.data == "help":
         buttons = [[            
             InlineKeyboardButton('ɢʀᴏᴜᴘ', url='https://t.me/DMoviesLand'),
