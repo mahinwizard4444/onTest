@@ -6,7 +6,7 @@ import random
 from pyrogram import Client, filters
 from info import COMMAND_HAND_LER
 
-@Client.on_message(filters.command("ping", COMMAND_HAND_LER) & f_onw_fliter)
+@Client.on_message(filters.command('ping') & filters.private & ~filters.edited)
 async def ping(_, message):
     start_t = time.time()
     rm = await message.reply_text("...")
