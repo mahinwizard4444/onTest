@@ -68,7 +68,7 @@ Heroku Account Status
     else:
         quota_details = ""
 
-    uptime = time.strftime("%𝙷 | %𝙼 | %𝚂", time.gmtime(time.time() - BOT_START_TIME))
+    uptime = time.strftime("%Hh | %Mm | %Ss", time.gmtime(time.time() - BOT_START_TIME))
 
     try:
         t, u, f = shutil.disk_usage(".")
@@ -83,8 +83,8 @@ Heroku Account Status
         disk = ""
 
     await message.reply_text(
-        "<b>𝙲𝚄𝚁𝚁𝙴𝙽𝚃 𝙱𝙾𝚃 𝚂𝚃𝙰𝚃𝚄𝚂</b>\n\n"       
-        f"<b>› 𝙱𝙾𝚃 𝚄𝙿𝚃𝙸𝙼𝙴 : {uptime}</b>\n"
+        "༺𝙲𝚄𝚁𝚁𝙴𝙽𝚃 𝙱𝙾𝚃 𝚂𝚃𝙰𝚃𝚄𝚂༻\n\n"       
+        f"‹›⧽ 𝙱𝙾𝚃 𝚄𝙿𝚃𝙸𝙼𝙴 : {uptime}\n"
         f"{quota_details}"
         f"{disk}",
         quote=True,
