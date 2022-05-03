@@ -72,8 +72,8 @@ async def start(client, message):
  
         return
     if len(message.command) ==2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
-        buttons = [[            
-            InlineKeyboardButton('SUBSCRIBE', url='https://youtube.com/channel/UCf_dVNrilcT0V2R--HbYpMA')
+        buttons = [[
+            InlineKeyboardButton('ᴄʟɪᴄᴋ ʜᴇʀᴇ ғᴏʀ ᴍᴏʀᴇ ʙᴜᴛᴛᴏɴs', callback_data='help')
             ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -82,6 +82,7 @@ async def start(client, message):
             reply_markup=reply_markup,
             parse_mode='html'
         )
+        await message.reply_chat_action("starting bot")
         return
     data = message.command[1]
     try:
