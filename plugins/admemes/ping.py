@@ -20,5 +20,5 @@ async def ping(_, message):
 
 async def stats(bot, update):
   currentTime = readable_time((time.time() - StartTime))
-  botstats = f'<b>Bot Uptime:</b> {currentTime}           
+  botstats = f'<b>Bot Uptime:</b> {currentTime}'           
   await update.reply_text(botstats)
