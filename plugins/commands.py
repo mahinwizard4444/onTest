@@ -48,7 +48,8 @@ async def start(client, message):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-        await message.reply_chat_action("starting")         
+        await message.reply_chat_action("starting")  
+        m=await message.reply("<b>𝙿𝙻𝙴𝙰𝚂𝙴 𝚂𝚄𝙱𝚂𝙲𝚁𝙸𝙱𝙴</b>")       
         return
     if AUTH_CHANNEL and not await is_subscribed(client, message):
         try:
