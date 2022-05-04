@@ -21,14 +21,14 @@ async def ping(_, message):
     end_t = time.time()
     time_taken_s = (end_t - start_t) * 1000
     uptime = time.strftime("%Hh | %Mm | %Ss", time.gmtime(time.time() - BOT_START_TIME))
-    await rm.edit(       
+    await message.reply_text(       
         "༺ᴄᴜʀʀᴇɴᴛ ʙᴏᴛ sᴛᴀᴛᴜs༻\n\n"  
         f"‹› ᴘᴏɴʜ : {time_taken_s:.3f} ms",     
         f"‹› ɴᴏᴛ ᴜᴘᴛɪᴍᴇ : {uptime}\n",  
         quote=True,        
         parse_mode="md"
     )
-    await rm.edit(       
+    await message.reply_text(       
         "༺ᴄᴜʀʀᴇɴᴛ ʙᴏᴛ sᴛᴀᴛᴜs༻\n\n"  
         f"‹› ᴘᴏɴʜ :{time_taken_s:.3f} ms",     
         f"‹› ɴᴏᴛ ᴜᴘᴛɪᴍᴇ : {uptime}\n",   
