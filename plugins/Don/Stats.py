@@ -24,7 +24,14 @@ async def ping(_, message):
     await rm.edit(       
         "༺ᴄᴜʀʀᴇɴᴛ ʙᴏᴛ sᴛᴀᴛᴜs༻\n\n"  
         f"‹› ᴘᴏɴʜ : {time_taken_s:.3f} ms",     
-        f"‹› ɴᴏᴛ ᴜᴘᴛɪᴍᴇ : {uptime}\n",           
+        f"‹› ɴᴏᴛ ᴜᴘᴛɪᴍᴇ : {uptime}\n",  
+        quote=True,        
         parse_mode="md"
     )
-    
+    await rm.edit(       
+        "༺ᴄᴜʀʀᴇɴᴛ ʙᴏᴛ sᴛᴀᴛᴜs༻\n\n"  
+        f"‹› ᴘᴏɴʜ :{time_taken_s:.3f} ms",     
+        f"‹› ɴᴏᴛ ᴜᴘᴛɪᴍᴇ : {uptime}\n",   
+        quote=True,
+        parse_mode="md"
+    )
