@@ -3,7 +3,7 @@ import math
 import time
 import heroku3
 import requests
-from plugins.helper_functions.cust_p_filters import f_onw_fliter
+from plugins.helper_function.cust_p_filters import f_onw_fliter
 from pyrogram import Client, filters
 from database.users_chats_db import db
 from info import COMMAND_HAND_LER
