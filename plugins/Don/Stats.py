@@ -23,6 +23,6 @@ async def ping(_, message):
     time_taken_s = (end_t - start_t) * 1000
     uptime = time.strftime("%Hh | %Mm | %Ss", time.gmtime(time.time() - BOT_START_TIME))
     await avr.edit(f"Pong!\n{time_taken_s:.3f} ms")   
-    await ava.edit("༺𝙲𝚄𝚁𝚁𝙴𝙽𝚃 𝙱𝙾𝚃 𝚂𝚃𝙰𝚃𝚄𝚂༻\n\n‹›⧽ 𝙱𝙾𝚃 𝚄𝙿𝚃𝙸𝙼𝙴 : {uptime}")        
+    await ava.edit(f"༺𝙲𝚄𝚁𝚁𝙴𝙽𝚃 𝙱𝙾𝚃 𝚂𝚃𝙰𝚃𝚄𝚂༻\n\n‹›⧽ 𝙱𝙾𝚃 𝚄𝙿𝚃𝙸𝙼𝙴 : {uptime}")        
 
 
