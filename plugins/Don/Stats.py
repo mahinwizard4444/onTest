@@ -23,9 +23,7 @@ async def ping(_, message):
     await message.reply_text(
         "༺𝙲𝚄𝚁𝚁𝙴𝙽𝚃 𝙱𝙾𝚃 𝚂𝚃𝙰𝚃𝚄𝚂༻\n\n"   
         f"Pong!\n{time_taken_s:.3f} ms", 
-        f"‹›⧽ 𝙱𝙾𝚃 𝚄𝙿𝚃𝙸𝙼𝙴 : {uptime}\n",   
-        quote=True,
-        parse_mode="md"
+        f"‹›⧽ 𝙱𝙾𝚃 𝚄𝙿𝚃𝙸𝙼𝙴 : {uptime}\n"          
     )
 
 async def bot_status(client,message):
