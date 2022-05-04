@@ -22,7 +22,6 @@ async def ping(_, message):
     time_taken_s = (end_t - start_t) * 1000
     await rm.edit(f"Pong!\n{time_taken_s:.3f} ms")
 
-@Client.on_message(filters.command('ping'))
 async def bot_status(client,message):
     if HEROKU_API_KEY:
         try:
