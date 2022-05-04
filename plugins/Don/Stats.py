@@ -16,14 +16,14 @@ HEROKU_API_KEY = (os.environ.get("HEROKU_API_KEY", ""))
 
 @Client.on_message(filters.command("ping", COMMAND_HAND_LER) & f_onw_fliter)
 async def ping(_, message):
-    start_t = time.time()
-    rm = await message.reply_text("...")
+    start_t = time.time()    
     end_t = time.time()
     time_taken_s = (end_t - start_t) * 1000
     uptime = time.strftime("%Hh | %Mm | %Ss", time.gmtime(time.time() - BOT_START_TIME))
     await rm.edit(f"Pong!\n{time_taken_s:.3f} ms")
     await message.reply_text(
-        "༺𝙲𝚄𝚁𝚁𝙴𝙽𝚃 𝙱𝙾𝚃 𝚂𝚃𝙰𝚃𝚄𝚂༻\n\n"       
+        "༺𝙲𝚄𝚁𝚁𝙴𝙽𝚃 𝙱𝙾𝚃 𝚂𝚃𝙰𝚃𝚄𝚂༻\n\n"   
+        f"Pong!\n{time_taken_s:.3f} ms", 
         f"‹›⧽ 𝙱𝙾𝚃 𝚄𝙿𝚃𝙸𝙼𝙴 : {uptime}\n",   
         quote=True,
         parse_mode="md"
